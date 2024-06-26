@@ -91,11 +91,11 @@ function LoginScreen({ navigation }: { navigation: NavigationProp<any> }) {
               </Animated.Text>
             </View>
 
-            <View className="flex items-center mx-4 space-y-4">
+            <View className="flex items-center mx-4 gap-4">
               <Animated.View
                 key={animationKey + "-4"}
                 entering={FadeInDown.duration(1000).springify()}
-                className="bg-black/5 p-5 rounded-2xl w-full mb-4"
+                className="bg-black/5 p-5 rounded-2xl w-full"
               >
                 <TextInput
                   placeholder="Email"
@@ -113,7 +113,7 @@ function LoginScreen({ navigation }: { navigation: NavigationProp<any> }) {
               <Animated.View
                 key={animationKey + "-5"}
                 entering={FadeInDown.delay(200).duration(1000).springify()}
-                className="bg-black/5 p-5 rounded-2xl w-full mb-24"
+                className="bg-black/5 p-5 rounded-2xl w-full"
               >
                 <TextInput
                   placeholder="Contraseña"
@@ -187,9 +187,22 @@ function LoginScreen({ navigation }: { navigation: NavigationProp<any> }) {
               >
                 <TouchableOpacity
                   onPress={handleLogin}
-                  className="w-full bg-[#6EADE1] p-3 rounded-2xl mb-16"
+                  style={{
+                    width: "100%",
+                    backgroundColor: "#6EADE1",
+                    padding: 12,
+                    borderRadius: 20,
+                    marginBottom: 48,
+                  }}
                 >
-                  <Text className="text-xl font-bold text-white text-center">
+                  <Text
+                    style={{
+                      fontSize: 18,
+                      fontWeight: "bold",
+                      color: "white",
+                      textAlign: "center",
+                    }}
+                  >
                     Ingresar
                   </Text>
                 </TouchableOpacity>
@@ -202,7 +215,7 @@ function LoginScreen({ navigation }: { navigation: NavigationProp<any> }) {
               >
                 <Text>No tienes una cuenta? </Text>
                 <TouchableOpacity
-                //onPress={() => navigation.navigate("Register")}
+                  onPress={() => navigation.navigate("Register")}
                 >
                   <Text className="text-blue-400 mb-60"> Regístrate</Text>
                 </TouchableOpacity>
