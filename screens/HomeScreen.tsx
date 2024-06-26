@@ -24,7 +24,7 @@ function HomeScreen({ navigation }: { navigation: NavigationProp<any> }) {
       300
     );
 
-    //setTimeout(() => navigation.navigate("Login"), 3000);
+    setTimeout(() => navigation.navigate("Login"), 3000);
   }, []);
 
   return (
