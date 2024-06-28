@@ -11,6 +11,7 @@ import {
   registerRequest,
   loginRequest,
   verifyTokenRequest,
+  getUserByIdRequest,
 } from "../services/auth";
 import { UserRegistrationData } from "../models/UserRegistrationData";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -24,6 +25,7 @@ interface AuthContextProps {
   authErrors: { field: string; message: string }[];
   clearErrors: () => void;
   logout: () => void;
+  getUserById: (id: string) => Promise<UserRegistrationData | undefined>;
 }
 
 export const AuthContext = createContext<AuthContextProps | undefined>(
@@ -129,6 +131,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
+  const getUserById = async (
+    id: string
+  ): Promise<UserRegistrationData | undefined> => {
+    try {
+      const user = await getUserByIdRequest(id);
+      return user;
+    } catch (error) {
+      //console.error("Error fetching user by ID:", error);
+      return undefined;
+    }
+  };
+
   const clearErrors = useCallback(() => {
     setAuthErrors([]);
   }, []);
@@ -186,6 +200,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         authErrors,
         clearErrors,
         logout,
+        getUserById,
       }}
     >
       {children}
