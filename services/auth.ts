@@ -1,6 +1,7 @@
 import axios from "./axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { UserRegistrationData } from "../models/UserRegistrationData";
+import { CatData } from "../models/CatData";
 
 axios.interceptors.request.use(
   async (config) => {
@@ -60,3 +61,17 @@ export const verifyTokenRequest = async (token: string) => {
     throw error;
   }
 };
+
+export const getUserByIdRequest = async (id: string) => {
+  try {
+    const response = await axios.get(`/users/${id}`);
+    return response.data;
+  } catch (error) {
+    //console.error("Error fetching user by ID:", error);
+    throw error;
+  }
+};
+
+export const getCatsRequest = () => axios.get(`/cats`);
+
+export const deleteCatRequest = (id: string) => axios.delete(`/cats/${id}`);
