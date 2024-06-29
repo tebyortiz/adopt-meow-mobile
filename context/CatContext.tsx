@@ -6,12 +6,13 @@ import React, {
   ReactNode,
 } from "react";
 import { CatData } from "../models/CatData";
-import { getCatsRequest, deleteCatRequest } from "../services/auth";
+import { getCatsRequest, deleteCatRequest, createCatRequest, } from "../services/auth";
 
 interface CatContextProps {
   cats: CatData[];
   getCats: () => void;
   deleteCat: (id: string) => Promise<void>;
+  createCat: (cat: CatData) => Promise<void>;
 }
 
 const CatContext = createContext<CatContextProps | undefined>(undefined);
@@ -37,6 +38,15 @@ export const CatProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const createCat = async (cat: CatData) => {
+    try {
+      await createCatRequest(cat);
+      getCats();
+    } catch (error) {
+      //console.error("Failed to create cat", error);
+    }
+  };
+
   useEffect(() => {
     getCats();
   }, []);
@@ -47,6 +57,7 @@ export const CatProvider = ({ children }: { children: ReactNode }) => {
         cats,
         getCats,
         deleteCat,
+        createCat
       }}
     >
       {children}

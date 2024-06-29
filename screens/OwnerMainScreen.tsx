@@ -177,7 +177,7 @@ function OwnerMainScreen({ navigation }: { navigation: NavigationProp<any> }) {
         </Animated.Text>
       ) : (
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View className="mx-4 flex-col mt-4">
+          <View className="mx-4 flex-col mt-4 gap-4">
             {filteredCats.length === 0 ? (
               <Animated.Text
                 className="text-center text-lg text-gray-500 p-4"

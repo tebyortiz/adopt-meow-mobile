@@ -9,6 +9,7 @@ import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import OwnerMainScreen from "./screens/OwnerMainScreen";
+import OwnerNewReportScreen from "./screens/OwnerNewReportScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,10 @@ export default function App() {
               <Stack.Screen name="Login" component={LoginScreen} />
               <Stack.Screen name="Register" component={RegisterScreen} />
               <Stack.Screen name="Owner-Main" component={OwnerMainScreen} />
+              <Stack.Screen
+                name="Owner-New-Report"
+                component={OwnerNewReportScreen}
+              />
             </Stack.Navigator>
           </NavigationContainer>
         </GestureHandlerRootView>
