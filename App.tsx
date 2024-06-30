@@ -10,6 +10,7 @@ import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import OwnerMainScreen from "./screens/OwnerMainScreen";
 import OwnerNewReportScreen from "./screens/OwnerNewReportScreen";
+import AdopterMainScreen from "./screens/AdopterMainScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ export default function App() {
                 name="Owner-New-Report"
                 component={OwnerNewReportScreen}
               />
+              <Stack.Screen name="Adopter-Main" component={AdopterMainScreen} />
             </Stack.Navigator>
           </NavigationContainer>
         </GestureHandlerRootView>
