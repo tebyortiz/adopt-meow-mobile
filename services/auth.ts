@@ -75,3 +75,5 @@ export const getUserByIdRequest = async (id: string) => {
 export const getCatsRequest = () => axios.get(`/cats`);
 
 export const deleteCatRequest = (id: string) => axios.delete(`/cats/${id}`);
+
+export const createCatRequest = (cat: CatData) => axios.post(`/cats`, cat);
