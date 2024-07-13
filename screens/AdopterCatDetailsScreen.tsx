@@ -30,7 +30,6 @@ function AdopterCatDetailsScreen({ route, navigation }: Props) {
   const handleAdopt = async () => {
     const adopterId = await AsyncStorage.getItem("userId");
     const catId = cat._id;
-
     //console.log("ID del adoptante:", adopterId);
     //console.log("ID del gatito:", catId);
 
