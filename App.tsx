@@ -11,8 +11,10 @@ import RegisterScreen from "./screens/RegisterScreen";
 import OwnerMainScreen from "./screens/OwnerMainScreen";
 import OwnerNewReportScreen from "./screens/OwnerNewReportScreen";
 import AdopterMainScreen from "./screens/AdopterMainScreen";
+import { RootStackParamList } from "./models/RootStackParamList";
+import AdopterCatDetailsScreen from "./screens/AdopterCatDetailsScreen";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
@@ -33,6 +35,10 @@ export default function App() {
                 component={OwnerNewReportScreen}
               />
               <Stack.Screen name="Adopter-Main" component={AdopterMainScreen} />
+              <Stack.Screen
+                name="Adopter-Cat-Details"
+                component={AdopterCatDetailsScreen}
+              />
             </Stack.Navigator>
           </NavigationContainer>
         </GestureHandlerRootView>

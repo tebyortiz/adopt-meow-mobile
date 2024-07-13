@@ -6,13 +6,14 @@ import React, {
   ReactNode,
 } from "react";
 import { CatData } from "../models/CatData";
-import { getCatsRequest, deleteCatRequest, createCatRequest, } from "../services/auth";
+import { getCatsRequest, deleteCatRequest, createCatRequest, applyAdoptionRequest } from "../services/auth";
 
 interface CatContextProps {
   cats: CatData[];
   getCats: () => void;
   deleteCat: (id: string) => Promise<void>;
   createCat: (cat: CatData) => Promise<void>;
+  applyAdoption: (catId: string, adopterId: string) => Promise<void>;
 }
 
 const CatContext = createContext<CatContextProps | undefined>(undefined);
@@ -47,6 +48,16 @@ export const CatProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const applyAdoption = async (catId: string, adopterId: string) => {
+    try {
+      await applyAdoptionRequest(catId, adopterId);
+      // getCats();
+    } catch (error) {
+      //console.error("Failed to apply adoption:", error);
+      throw error;
+    }
+  };
+
   useEffect(() => {
     getCats();
   }, []);
@@ -57,7 +68,8 @@ export const CatProvider = ({ children }: { children: ReactNode }) => {
         cats,
         getCats,
         deleteCat,
-        createCat
+        createCat,
+        applyAdoption,
       }}
     >
       {children}
