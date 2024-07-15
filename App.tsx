@@ -13,6 +13,7 @@ import OwnerNewReportScreen from "./screens/OwnerNewReportScreen";
 import AdopterMainScreen from "./screens/AdopterMainScreen";
 import { RootStackParamList } from "./models/RootStackParamList";
 import AdopterCatDetailsScreen from "./screens/AdopterCatDetailsScreen";
+import OwnerCatAdoptersScreen from "./screens/OwnerCatAdoptersScreen";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -38,6 +39,10 @@ export default function App() {
               <Stack.Screen
                 name="Adopter-Cat-Details"
                 component={AdopterCatDetailsScreen}
+              />
+              <Stack.Screen
+                name="Owner-Cat-Adopters"
+                component={OwnerCatAdoptersScreen}
               />
             </Stack.Navigator>
           </NavigationContainer>

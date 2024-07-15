@@ -91,3 +91,32 @@ export const applyAdoptionRequest = async (
     throw error;
   }
 };
+
+export const updateCatOwnerRequest = async (
+  catId: string,
+  newOwnerId: string
+) => {
+  try {
+    const response = await axios.put(`/cats/${catId}/update-owner`, {
+      newOwnerId,
+    });
+    return response;
+  } catch (error) {
+    //console.error("Error updating cat owner:", error);
+    throw error;
+  }
+};
+
+export const confirmAdoptionRequest = async (
+  catId: string,
+  adopterId: string
+) => {
+  try {
+    const response = await axios.put(`/cats/${catId}/adopted`, { adopterId });
+    //console.log("Adoption confirmed:", response);
+    return response;
+  } catch (error) {
+    //console.error("Error confirming adoption:", error);
+    throw error;
+  }
+};
