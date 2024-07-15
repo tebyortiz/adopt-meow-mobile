@@ -6,7 +6,14 @@ import React, {
   ReactNode,
 } from "react";
 import { CatData } from "../models/CatData";
-import { getCatsRequest, deleteCatRequest, createCatRequest, applyAdoptionRequest } from "../services/auth";
+import {
+  getCatsRequest,
+  deleteCatRequest,
+  createCatRequest,
+  applyAdoptionRequest,
+  updateCatOwnerRequest,
+  confirmAdoptionRequest,
+} from "../services/auth";
 
 interface CatContextProps {
   cats: CatData[];
@@ -14,6 +21,8 @@ interface CatContextProps {
   deleteCat: (id: string) => Promise<void>;
   createCat: (cat: CatData) => Promise<void>;
   applyAdoption: (catId: string, adopterId: string) => Promise<void>;
+  updateCatOwner: (catId: string, newOwnerId: string) => Promise<void>;
+  confirmAdoption: (catId: string, adopterId: string) => Promise<void>;
 }
 
 const CatContext = createContext<CatContextProps | undefined>(undefined);
@@ -58,6 +67,26 @@ export const CatProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const updateCatOwner = async (catId: string, newOwnerId: string) => {
+    try {
+      await updateCatOwnerRequest(catId, newOwnerId);
+      getCats();
+    } catch (error) {
+      //console.error("Failed to update cat owner", error);
+      throw error;
+    }
+  };
+
+  const confirmAdoption = async (catId: string, adopterId: string) => {
+    try {
+      await confirmAdoptionRequest(catId, adopterId);
+      getCats();
+    } catch (error) {
+      //console.error("Failed to confirm adoption", error);
+      throw error;
+    }
+  };
+
   useEffect(() => {
     getCats();
   }, []);
@@ -70,6 +99,8 @@ export const CatProvider = ({ children }: { children: ReactNode }) => {
         deleteCat,
         createCat,
         applyAdoption,
+        updateCatOwner,
+        confirmAdoption,
       }}
     >
       {children}
