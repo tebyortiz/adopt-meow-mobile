@@ -96,40 +96,40 @@ function AdopterCatDetailsScreen({ route, navigation }: Props) {
           maxWidth: 600,
         }}
       >
-        <View className="flex-row justify-center items-center mb-2 mt-12 space-x-1">
-          <Text className="text-[#2B26AD] font-semibold text-xl bg-white py-1 p-2 rounded-full">
+        <View className="flex-row justify-center items-center mb-2 mt-8 space-x-1 flex-wrap">
+          <Text className="text-[#2B26AD] font-semibold text-xl bg-white py-1 px-3 m-1 rounded-full">
             Nombre: {cat.name}
           </Text>
           <Text
-            className="text-[#2B26AD] font-semibold text-xl py-1 p-2 rounded-full"
+            className="text-[#2B26AD] font-semibold text-xl py-1 px-3 m-1 rounded-full"
             style={{ backgroundColor: getSexColor(cat.sex) }}
           >
             {cat.sex === "male" ? "Macho" : "Hembra"}
           </Text>
         </View>
 
-        <View className="flex-row justify-center items-center mb-2 space-x-1">
-          <Text className="text-[#2B26AD] font-semibold text-xl bg-white px-3 py-1 p-2 rounded-full">
-            Peso:{cat.weight}
+        <View className="flex-row justify-center items-center mb-2 space-x-1 flex-wrap">
+          <Text className="text-[#2B26AD] font-semibold text-xl bg-white px-3 py-1 m-1 rounded-full">
+            Peso: {cat.weight}
           </Text>
-          <Text className="text-[#2B26AD] font-semibold text-xl bg-white px-3 py-1 p-2 rounded-full">
+          <Text className="text-[#2B26AD] font-semibold text-xl bg-white px-3 py-1 m-1 rounded-full">
             Castrado/a?
           </Text>
           <Text
-            className="text-[#2B26AD] font-semibold text-xl px-3 py-1 rounded-full"
+            className="text-[#2B26AD] font-semibold text-xl px-3 py-1 m-1 rounded-full"
             style={{ backgroundColor: getCastratedColor(cat.castrated) }}
           >
             {cat.castrated === "yes" ? "Sí" : "No"}
           </Text>
         </View>
 
-        <View className="flex-row justify-center items-center mb-2">
-          <Text className="text-[#2B26AD] text-center font-semi-bold text-l bg-white px-3 py-1 p-2 rounded-xl">
+        <View className="bg-white p-2 rounded-xl mb-4">
+          <Text className="text-[#2B26AD] text-center font-semi-bold text-l">
             {cat.description}
           </Text>
         </View>
 
-        <View className="bg-white p-2 items-center rounded-xl mb-2">
+        <View className="bg-white p-2 items-center rounded-xl mb-4">
           <Text className="text-[#2B26AD] font-semibold text-xl">
             Cuidados Especiales:
           </Text>

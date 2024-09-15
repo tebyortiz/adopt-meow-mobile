@@ -55,9 +55,18 @@ function OwnerCatAdoptersScreen({ route, navigation }: Props) {
       <StatusBar style="dark" />
       <Image
         source={require("../assets/images/cat-print.png")}
-        className="absolute bottom-0 left-10 w-full h-1/2 object-cover z-[-1]"
-        style={{ transform: [{ rotate: "-50deg" }] }}
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 40,
+          width: "100%",
+          height: "50%",
+          resizeMode: "cover",
+          zIndex: -1,
+          transform: [{ rotate: "-50deg" }],
+        }}
       />
+
       <View className="mx-4 flex-row justify-between items-center mb-[-8] ">
         <View className="flex-row items-center">
           <TouchableOpacity onPress={() => navigation.goBack()}>
