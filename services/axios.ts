@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://mi-adopt-meow-31371569006f.herokuapp.com/api",
+  baseURL: "https://adopt-meow-back-emd-production.up.railway.app/api",
   withCredentials: true,
 });
 
