@@ -14,6 +14,7 @@ import AdopterMainScreen from "./screens/AdopterMainScreen";
 import { RootStackParamList } from "./models/RootStackParamList";
 import AdopterCatDetailsScreen from "./screens/AdopterCatDetailsScreen";
 import OwnerCatAdoptersScreen from "./screens/OwnerCatAdoptersScreen";
+import AdopterApplicationStatusScreen from "./screens/AdopterApplicationStatusScreen";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -43,6 +44,10 @@ export default function App() {
               <Stack.Screen
                 name="Owner-Cat-Adopters"
                 component={OwnerCatAdoptersScreen}
+              />
+              <Stack.Screen
+                name="Adopter-Applications-Status"
+                component={AdopterApplicationStatusScreen}
               />
             </Stack.Navigator>
           </NavigationContainer>

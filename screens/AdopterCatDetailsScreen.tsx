@@ -155,10 +155,7 @@ function AdopterCatDetailsScreen({ route, navigation }: Props) {
           </View>
         </View>
 
-        <Animated.View
-          className="flex-row items-center mb-0"
-          entering={FadeInUp.delay(600).duration(1000).springify()}
-        >
+        <View className="flex-row items-center mb-0">
           <View
             style={{
               width: 80,
@@ -186,12 +183,9 @@ function AdopterCatDetailsScreen({ route, navigation }: Props) {
               {owner.username}
             </Text>
           </View>
-        </Animated.View>
+        </View>
 
-        <Animated.View
-          entering={FadeInUp.delay(1000).duration(1000).springify()}
-          className="absolute bottom-[-60] right-[20] items-center"
-        >
+        <View className="absolute bottom-[-60] right-[20] items-center">
           <TouchableOpacity onPress={handleAdopt}>
             <Image
               source={require("../assets/images/heart.png")}
@@ -199,7 +193,7 @@ function AdopterCatDetailsScreen({ route, navigation }: Props) {
             />
           </TouchableOpacity>
           <Text className="text-[#2B26AD] font-bold text-2xl ">ADOPTAR</Text>
-        </Animated.View>
+        </View>
       </Animated.View>
 
       <Modal
