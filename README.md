@@ -40,7 +40,8 @@ De estas 3 secciones se desprenden otras pantallas:
 - Selección del usuario "Adopter": al presionar un gatito del listado de reportes, aparecerá la pantalla con el listado de usuarios interesados en adoptar a ese gatito. Al costado derecho de cada ADOPTER que se postuló, está el botón de "ENTREGAR", por lo que el usuario "OWNER" deberá elegir el adoptante al que desee entregar el gatito, presionando este botón.
 - Modal de Confirmación: Aparecerá luego de seleccionar el usuario "ADOPTER" al que se le entregará el gatito.
 
-[![owners-interface.png](https://i.postimg.cc/fRcLLQH6/owners-interface.png)](https://postimg.cc/rDpcn32J)
+[![owners-interface.png](https://i.postimg.cc/nckmR7xs/owners-interface.png)](https://postimg.cc/svM11Mvy)
+
 
 #### Interfaz de ADOPTERS
 Un usuario que desee adoptar un gatito en la app, luego de registrarse, se va a encontrar con las pantalla "Home Screen", que consta de 3 secciones:
@@ -97,6 +98,8 @@ https://www.linkedin.com/in/miguel-ortiz-9736b32a5/
 Fernando A. Gonzalez, Software Lead Engineer.
 https://www.linkedin.com/in/fernando-a-gonzalez/
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 | Index |
 | ------ |
 | [Project Description](#project-description) |
@@ -134,7 +137,7 @@ From these 3 sections, other screens emerge:
 - Selection of the "Adopter" User: By clicking on a kitten from the reports list, the screen with the list of users interested in adopting that kitten appears. On the right side of each ADOPTER who applied, there is the "DELIVER" button, so the "OWNER" user must choose the adopter to whom they wish to deliver the kitten by pressing this button.
 - Confirmation Modal: Appears after selecting the "ADOPTER" user to whom the kitten will be delivered.
 
-[![owners-interface.png](https://i.postimg.cc/fRcLLQH6/owners-interface.png)](https://postimg.cc/rDpcn32J)
+[![owners-interface.png](https://i.postimg.cc/nckmR7xs/owners-interface.png)](https://postimg.cc/svM11Mvy)
 
 #### ADOPTERS Interface
 A user who wants to adopt a kitten in the app, after registering, will find the "Home Screen" which consists of 3 sections:
